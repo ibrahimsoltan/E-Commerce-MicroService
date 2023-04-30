@@ -27,9 +27,8 @@ const completeOrder = async (req, res) => {
       const productId = product.id;
       console.log(productId);
       const sellingCompanyUrl = `http://127.0.0.1:8080/AdminService-1.0-SNAPSHOT/api/selling/sellproduct/${productId}`;
-
       // Send the order data to the selling company
-      await axios.put(sellingCompanyUrl);
+      await axios.put(sellingCompanyUrl, { productId, customer });
     }
 
     res.status(200).json({ message: "Order completed successfully", order });
