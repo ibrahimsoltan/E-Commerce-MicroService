@@ -26,7 +26,7 @@ const completeOrder = async (req, res) => {
     for (const product of products) {
       const productId = product.id;
       console.log(productId);
-      const sellingCompanyUrl = `https://1d5b-196-157-37-120.ngrok-free.app/api/selling/sellproduct/${productId}`;
+      const sellingCompanyUrl = `https://1d5b-196-157-37-120.ngrok-free.app/AdminService-1.0-SNAPSHOT/api/selling/sellproduct/${productId}`;
       // Send the order data to the selling company
       await axios.put(sellingCompanyUrl, { productId, customer });
     }
