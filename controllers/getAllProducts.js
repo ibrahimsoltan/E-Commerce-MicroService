@@ -4,7 +4,7 @@ const Products = require("../models/product");
 
 const getAllProducts = async (req, res) => {
     try {
-        const url = "http://127.0.0.1:8080/AdminService-1.0-SNAPSHOT/api/selling/viewproducts"
+        const url = "https://1d5b-196-157-37-120.ngrok-free.app/api/selling/viewproducts"
         // Find all products
         const products = await axios.get(url);
 
