@@ -55,8 +55,10 @@ app.get("/customerOrder", require("./controllers/getCustomerOrder"));
 app.post("/completeOrder", require("./controllers/completeOrder"));
 app.get("/oldOrders", require("./controllers/getOldOrders"));
 app.get("/getAllProducts", require("./controllers/getAllProducts"));
+app.get("/shippedOrders" , require("./controllers/getShippedOrders"))
 
 const removeFromOrder = require("./controllers/removeFromOrder");
 
 // Add the removeFromOrder route
 app.delete("/removeFromOrder/:id", removeFromOrder);
+

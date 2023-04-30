@@ -1,8 +1,12 @@
-const Order = require("../models/order");
+const CustomerOrder = require("../models/CustomerOrder");
 
 const addToOrder = async (req, res) => {
   try {
     const product = req.body;
+    
+    console.log("product", product);
+    console.log("req.session.user", req.session.user);
+
     const customer = req.session.user;
 
     // Check if the customer is logged in
@@ -11,11 +15,11 @@ const addToOrder = async (req, res) => {
     }
 
     // Find an existing order for the current customer that is not completed
-    let order = await Order.findOne({ customer: customer._id, completed: false });
+    let order = await CustomerOrder.findOne({ customer: customer._id, completed: false });
 
     // If an order doesn't exist, create a new one
     if (!order) {
-      order = new Order({
+      order = new CustomerOrder({
         customer: customer._id,
         products: [product],
         total: product.price,

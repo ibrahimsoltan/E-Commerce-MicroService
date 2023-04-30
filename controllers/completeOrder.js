@@ -1,5 +1,5 @@
 const axios = require("axios");
-const Order = require("../models/order");
+const CustomerOrder = require("../models/CustomerOrder");
 
 const completeOrder = async (req, res) => {
   try {
@@ -11,7 +11,7 @@ const completeOrder = async (req, res) => {
     }
 
     // Find the current order for the customer that is not completed
-    const order = await Order.findOne({ customer: customer._id, completed: false });
+    const order = await CustomerOrder.findOne({ customer: customer._id, completed: false });
 
     if (!order) {
       return res.status(404).json({ error: "No active order found" });
