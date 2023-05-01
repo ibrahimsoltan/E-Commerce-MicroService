@@ -23,7 +23,16 @@ const orderSchema = new Schema({
   shipped: {
     type: Boolean,
     default: false
+  },
+  customerName: {
+    type: String,
+    required: true
+  },
+  customerAddress: {
+    type: String,
+    required: true
   }
+  
 });
 
 const CustomerOrder= mongoose.model('CustomerOrder', orderSchema);

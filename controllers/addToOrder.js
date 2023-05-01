@@ -8,6 +8,8 @@ const addToOrder = async (req, res) => {
     console.log("req.session.user", req.session.user);
 
     const customer = req.session.user;
+    const customerName = customer.email;
+    const customerAddress = customer.address;
 
     // Check if the customer is logged in
     if (!customer) {
@@ -24,6 +26,8 @@ const addToOrder = async (req, res) => {
         products: [product],
         total: product.price,
         completed: false,
+        customerName: customerName,
+        customerAddress: customerAddress
       });
     } else {
       // If the order exists, add the product to the order
@@ -34,7 +38,7 @@ const addToOrder = async (req, res) => {
     // Save the order
     await order.save();
 
-    res.status(200).json({ message: "Product added to the order", order });
+    res.status(200).json({order});
   } catch (error) {
     // res.status(500).json({ error: "An error occurred while adding the product to the order" });
     res.status(500).json({ error: error.message });

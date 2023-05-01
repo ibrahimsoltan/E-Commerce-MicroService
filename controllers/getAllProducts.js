@@ -1,10 +1,11 @@
 // Controller to fetch all products from GET request
 const axios = require("axios");
 const Products = require("../models/product");
+const url = require("../controllers/url");
 
 const getAllProducts = async (req, res) => {
     try {
-        const url = "https://1d5b-196-157-37-120.ngrok-free.app/AdminService-1.0-SNAPSHOT/api/selling/viewproducts"
+        const url = `${url}/AdminService-1.0-SNAPSHOT/api/selling/viewproducts`
         // Find all products
         const products = await axios.get(url);
 
