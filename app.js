@@ -63,4 +63,6 @@ const removeFromOrder = require("./controllers/removeFromOrder");
 app.delete("/removeFromOrder/:id", removeFromOrder);
 app.get("/getAllCustomers", require("./controllers/getAllCustomers"));
 
+app.post("/shipOrder", require("./controllers/shipOrder"));
+
 
