@@ -2,9 +2,8 @@ const CustomerOrder = require("../models/CustomerOrder");
 
 const shipOrder = async (req, res) => {
     try {
-        console.log(req.body);
-        
         const orderId = req.body._id;
+        console.log(orderId);
         const order = await CustomerOrder.findById(orderId);
         if (!order) {
             res.status(404).json({ message: "Order not found" });

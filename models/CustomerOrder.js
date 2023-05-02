@@ -32,7 +32,6 @@ const orderSchema = new Schema({
     type: String,
     required: true
   }
-  
 });
 
 const CustomerOrder= mongoose.model('CustomerOrder', orderSchema);
