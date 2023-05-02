@@ -10,7 +10,7 @@ const getOldOrders = async (req, res) => {
     }
 
     // Find all completed orders for the customer
-    const orders = await Order.find({ customer: customer._id, completed: true });
+    const orders = await Order.find({ customer: customer._id, completed: true , shipped : false });
 
     res.status(200).json({ orders });
   } catch (error) {
