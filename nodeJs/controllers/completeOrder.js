@@ -28,7 +28,7 @@ const completeOrder = async (req, res) => {
       console.log(orderId);
       
     }
-    const sellingCompanyUrl = `${url}/AdminService-1.0-SNAPSHOT/api/selling/sendOrder`;
+    const sellingCompanyUrl = `${url}AdminService-1.0-SNAPSHOT/api/selling/sendOrder`;
       // Send the order data to the selling company
       await axios.put(sellingCompanyUrl,  customerOrder );
 
