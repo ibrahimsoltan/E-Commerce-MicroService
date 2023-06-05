@@ -1,3 +1,6 @@
 [submodule "online_shopping_system"]
 	path = online_shopping_system
 	url = https://github.com/sh-osama-sami/online_shopping_system.git
+[submodule "supplierService"]
+	path = supplierService
+	url = https://github.com/NFayed/SellingServiceShoppingApplication.git
